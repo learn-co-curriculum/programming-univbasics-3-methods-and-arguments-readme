@@ -169,9 +169,9 @@ Now that we know how to define a method with arguments, let's define the
 difference between _arguments_ and _parameters_, which are subtle, but important
 to know when working with or discussing code.
 
-A _parameter_ is a value that the method expects you to pass when you call it.
+A _parameter_ is a local variable, specific to the method that the method expects you to pass when you call it. Inside the method, the programming language will let you use that local variable name (the _parameter_) to "get" the value (_the argument_) that was assigned to it when you _called_ the method.
 
-An _argument_ is the value you pass to a method when you call the method.
+An _argument_ is the value you pass to a method when you call the method that is, in turn, assigned to a _parameter_.
 
 In simpler words, parameters appear in method definitions; arguments appear in
 method calls. For example:
