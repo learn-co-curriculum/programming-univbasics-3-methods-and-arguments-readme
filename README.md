@@ -67,7 +67,7 @@ accepts an argument of a person's name, we would do it like this:
 ```ruby
     #method name      #parameter
 def greeting_a_person(name)
-  "Hello #{name}"
+  puts "Hello #{name}"
 end
 ```
 
