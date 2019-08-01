@@ -188,6 +188,66 @@ In the `greeting` method, the variable `parameter` is the parameter for the
 method and when calling the method, the value passed for `argument` is the
 argument.
 
+## Define a Method That Uses Default Arguments
+
+Occasionally, we will need to write methods that behave a specific way _by
+default_, but provide the flexibility to behave differently if we chose.
+
+Take the previous `greeting` method example - What if we wanted to say
+hello to someone whose name we didn't know? If we run greeting without
+passing in an argument?
+
+```ruby
+def greeting(name)
+  puts "Hello, #{name}!"
+end
+
+greeting
+# > ArgumentError (wrong number of arguments (given 0, expected 1))
+```
+
+We get an `ArgumentError` like we did when passing too many arguments.
+
+Using a default argument we can provide a default value for `name` in
+the event that no argument is provided. Default arguments are included
+after the parameter name as seen below:
+
+```ruby
+def greeting(name = 'neighbor')
+  puts "Hello, #{name}!"
+end
+
+greeting
+# > Hello, neighbor!
+```
+
+Instead of getting an error above, the default argument is used and the method
+runs normally. If we decide to pass in an argument, the method will use
+that argument instead:
+
+```ruby
+greeting("Steven")
+# > Hello, Steven!
+```
+
+Default arguments are often used when we're writing a method with multiple
+parameters, some required, some optional. In the example below, we've
+modified `greeting_programmer` so that the `name` method is required, but
+the programming language is optional.
+
+```ruby
+  # method name      first_parameter, second_parameter
+def greeting_programmer(name, language = "computer")
+  puts "Hello, #{name}. We heard you are a great #{language} programmer."
+end
+
+greeting_programmer("Steven", "Ruby")
+# > Hello, Steven. We heard you are a great Ruby programmer.
+
+greeting_programmer("Maria")
+# > Hello, Maria. We heard you are a great computer programmer.
+```
+
 ## Conclusion
 
 In order to create dynamic functions in Ruby, pass in arguments, which are
