@@ -5,6 +5,7 @@
 - Describe the functionality of arguments
 - Define a method that accepts arguments
 - Recognize the difference between arguments and parameters
+- Define a method that uses default arguments
 
 ## Introduction
 
