@@ -9,17 +9,19 @@
 
 ## Introduction
 
-In the real world, many interactions have a "template" behavior that is applied
-to every interaction, but these behaviors change only slightly depending on a
-tiny factor.
+In the real world, many of our interactions have a "template" behavior that is
+applied to every interaction, but these behaviors change only slightly depending
+on a tiny factor.
 
-For example, if you go to a coffee shop, they take down **your** name to call
-you up when your order is ready. If you visit a doctor's office, they may call
-**your** name when it's your turn to be seen. Methods can also be written to
-have a "template" of shared activity, but this activity can be changed just a
-little bit when necessary.
+For example, the barista at the coffee shop will call out **your** name when
+your order is ready. At the doctor's office, they may call **your** name when
+it's your turn to see the doctor. The same process is followed for others who
+buy coffee or go to the doctor, but, of course, the name will change depending
+on who the process is for.
 
-The particular bits that make the change are called "arguments."
+Methods can also be written to have a "template" of shared activity, but this
+activity can be changed just a little bit when necessary. The particular bits
+that make the change are called "arguments."
 
 ## Describe the Functionality of Arguments
 
@@ -144,8 +146,8 @@ can reference the value of the argument inside the body of the method.
 
 The number of arguments, or inputs, an operation expects is called _arity_. The
 _arity_ of addition is two: we expect two numbers to add. The `arity` of
-`greeting` is one: we told ruby to expect one argument for its parameter, `name`
-and by golly, Ruby will get mad if we break our promise to it.
+`greeting` is one: we told Ruby to expect one argument for its parameter, `name`
+and by golly, Ruby won't be able to make the code work if we break our promise.
 
 A method defined to accept one argument will raise an error if
 called with more than one argument.
@@ -159,10 +161,10 @@ greeting("Maria", "Ruby") # The method accepts 1 argument and I supplied 2.
 # > ArgumentError: wrong number of arguments (2 for 1)
 ```
 
-Again, the arity of greeting is one, by providing it two arguments, Ruby gets
-upset. By default, all arguments defined in a method are required to
-correctly invoke (or "call", or "execute") that method and method arguments
-create local variables for you use when the method is actually called.
+Again, the arity of greeting is one; if two arguments are provided, we'll see an
+error. By default, all arguments defined in a method are required to correctly
+invoke (or "call", or "execute") that method and method arguments create local
+variables for you use when the method is actually called.
 
 ## Recognize the Difference Between Arguments and Parameters
 
@@ -194,8 +196,8 @@ argument.
 Occasionally, we will need to write methods that behave a specific way _by
 default_, but provide the flexibility to behave differently if we chose.
 
-Take the previous `greeting` method example - What if we wanted to say
-hello to someone whose name we didn't know? If we run greeting without
+Take the previous `greeting` method example—what if we wanted to say
+hello to someone whose name we didn't know? If we run `greeting` without
 passing in an argument?
 
 ```ruby
