@@ -160,7 +160,7 @@ greeting("Maria", "Ruby") # The method accepts 1 argument and I supplied 2.
 ```
 
 Again, the arity of greeting is one, by providing it two arguments, Ruby gets
-upset. By default, all arguments defined in a method are required in order to
+upset. By default, all arguments defined in a method are required to
 correctly invoke (or "call", or "execute") that method and method arguments
 create local variables for you use when the method is actually called.
 
@@ -251,11 +251,11 @@ greeting_programmer("Maria")
 
 ## Conclusion
 
-In order to create dynamic functions in Ruby, pass in arguments, which are
+To create dynamic functions in Ruby, pass in arguments, which are
 stored as _parameters_ within the scope of the method, that can be used in the
 body of the method.
 
-This gives us a lot more flexibility to maintain efficient code bases, as well
+This gives us a lot more flexibility to maintain efficient codebases, as well
 as to apply real-world concepts when building our programs. You'll learn more
 about arguments in future lessons.
 
