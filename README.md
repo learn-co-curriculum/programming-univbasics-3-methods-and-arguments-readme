@@ -20,62 +20,50 @@ buy coffee or go to the doctor, but, of course, the name will change depending
 on who the process is for.
 
 Methods can also be written to have a "template" of shared activity, but this
-activity can be changed just a little bit when necessary. The particular bits
-that make the change are called "arguments."
+activity can be changed just a little bit when necessary. In the previous
+lesson we saw a method called `say_hello_five_times`. But what if we wanted
+to say "Hello" three times? Nine times? Twenty-two times? Our code would be
+very cluttered if we had to write a separate method for each of those counts.
 
-## Describe the Functionality of Arguments
+In this case we want the "template behavior" to be saying hello. But we want
+to makt it possible to vary the number of times hello is said. The little
+bit we want to change is the number of times.
 
-When we log into email, social media, or any other user-based platform, what do
-we normally see after logging in?
-
-Our name somewhere on the account, right?
-
-So far, we've only discussed how to create methods that return static
-information. For example:
-
-```ruby
-def greeting
-  puts "Hi, Ruby programmer!"
-end
-
-greeting
-#=> Hi, Ruby Programmer
-```
-
-As amazing as this method is, it's _static_. It hard-codes, or directly
-specifies, the name of the person we are greeting as `"Ruby programmer"`. If we
-wanted to build a method that can greet _anyone_ by name, we'd need to be able
-to add input into the body of the method.
-
-Just like with a real-world greeting, we'd want our method to be more _dynamic_,
-more abstract, and _more re-usable_. Remember our DRY (Don't Repeat Yourself)
-principle? The method should maintain the elements that will always be the same,
-no matter whom we greet, but allow us to change, or swap out, the name of the
-person we are greeting. This is considered _dynamic_, or able to adapt to change
-or progress, as opposed to _static_, which in the case of programming means
-"hard-coded".
+The particular bits that make the change the way a method runs when it's 
+called are called "arguments."
 
 ## Define a Method That Accepts Arguments
 
-Now that we see the limitations of static methods, how do we take the information
-we know about arguments and apply them to real-world scenarios like that of a
-doctor's office or a coffee shop?
+To define the ***arguments*** you expect a method to take, you specify ***parameters*** in the
+line that starts with `def`. Be careful of the vocabulary here. Parameters
+are the "catchers" to arguments. When you ***call*** a method the data you
+pass in the ***call*** is called an argument. That passed data is given
+a "local" name called a ***parameter***. You can access the data that 
+was held in the ***argument*** by working with the ***parameter***.
 
-To define the arguments you expect a method to take, you specify parameters in the
-line that starts with `def`.
+If you're unclear on the difference betweeen argument and parameter, 
+we'll clarify it here. Just keep in mind that while they point to
+the same data, they ***are not the same thing***.
 
-For example, if we want to write a method called `greeting_a_person` that
+For example, if we want to write a method called `say_hello_multiple_times` that
 accepts an argument of a person's name, we would do it like this:
 
 ```ruby
-    #method name      #parameter
-def greeting_a_person(name)
-  puts "Hello #{name}"
+    #method name             #parameter
+def say_hello_multiple_times(count)
+  count.times do
+    puts "Hello!"
+  end
 end
+say_hello_multiple_times(3)
+say_hello_multiple_times(2)
 ```
 
-As you can see in the example above, the `name` parameter now holds a name, which
-is being passed in as an argument its invocation.
+As you can see in the example above, the `count` parameter now holds a count, which
+is being passed in as an argument in `say_hello_multiple_times`'s invocation.
+
+Now that you've seen some code using arguments and parameters, let's repeat
+our explanation of the difference between the two to make sure you've got it.
 
 Arguments that are passed into methods create new _local_ variables that can be
 used within the _scope_ of the method. We call these local variables _parameters_.
@@ -84,26 +72,19 @@ that data, just like when you create a variable. Arguments follow the same rules
 as local variables: they can be any word that starts with a lowercase letter and
 they should be as descriptive of the data as possible.
 
-In our `greeting_a_person` method example, we are saying: When you call the
-`greeting_a_person` method with an argument of `"Maria"`, set a variable `name`
-equal to the value of `"Maria"`.
-
-Let's open up IRB and try this out! First, take the `greeting_a_person` code
+Let's open up IRB and try this out! First, take the `say_hello_multiple_times` code
 sample and paste it into your command line. Once that has been entered, you can
 test out the method like this:
 
 ```bash
-greeting_a_person("Maria")
-# => "Hello Maria"
+say_hello_multiple_times(2)
 ```
 
-or this:
+A method can have **multiple** parameters. It's common to have two to four, typically.
 
-```bash
-name = "Maria"
-greeting_a_person(name)
-# => "Hello Maria"
-```
+Let's make our method a little bit more personable by adding a name that we
+want to say "Hello" to.
+
 
 This same pattern works for passing in as many arguments as you want by adding a
 comma (`,`) between each argument you want to pass in. Let's try creating a
