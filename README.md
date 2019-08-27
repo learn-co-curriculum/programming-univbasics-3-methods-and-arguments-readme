@@ -23,11 +23,11 @@ customer.
 
 Methods can also be written to have a "template" of shared activity, but this
 activity can be changed _just a little bit_ when necessary. In the previous
-lesson we saw a method called `say_hello_five_times`. But what if we wanted
+lesson, we saw a method called `say_hello_five_times`. But what if we wanted
 to say "Hello" three times? Nine times? Twenty-two times? Our code would be
 very cluttered if we had to write a separate method for each of those counts.
 
-In this case we want the "general behavior" to be saying hello. But we want
+In this case, we want the "general behavior" to be saying hello. But we want
 to make it possible to vary the number of times `"Hello"` is said. The little
 bit we want to change is the number of times.
 
@@ -186,7 +186,7 @@ greeting("Maria", "Ruby") # The method accepts 1 argument and I supplied 2.
 It sure is a bummer when our method can't run because we failed to provide
 an argument. We can get around this by telling Ruby to set a value
 as default. If we leave out the argument, Ruby knows how to help
-for us. If we consciously pass the value, Ruby overrides its default.
+us. If we consciously pass the value, Ruby overrides its default.
 
 Let's fix our broken example from above:
 
@@ -228,7 +228,7 @@ Hello Generic Ruby Programmer!
 ## Conclusion
 
 To create dynamic functions in Ruby, pass in arguments, which are
-stored as _parameters_ within the body of the method. In the body
+stored as _parameters_ within the body of the method. In the body,
 we use those _parameters_ to "grab hold of" and use the data that
 were passed in as arguments.
 
